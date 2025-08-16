@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="sr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Radno vrijeme</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <meta name="robots" content="noindex,nofollow" />
+  </head>
+  <body onload="HoursApp.initIndex()">
+    <div class="container">
+      <div class="header">
+        <h1>Radno vrijeme</h1>
+        <a id="admin-btn" class="button" href="javascript:void(0)">Admin</a>
+      </div>
+
+      <div class="card">
+        <div class="status-wrap">
+          <div class="status-img">
+            <!-- Ako open.png/close.png ne postoje, prikazaće se alt tekst -->
+            <img id="status-img" src="" alt="Status" onerror="this.replaceWith(document.createTextNode('Slika (open.png/close.png) nedostaje'))">
+          </div>
+          <div class="status-text">
+            <h2><span id="status-label" class="badge">...</span></h2>
+            <div id="meta-line" class="meta">Učitavam...</div>
+          </div>
+        </div>
+
+        <hr class="sep" />
+
+        <h3>Ove sedmice</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Dan</th><th>Radno vrijeme</th></tr>
+          </thead>
+          <tbody id="tabela-tijelo"></tbody>
+        </table>
+        <p class="footer-note">Po difoltu: Ponedjeljak–Petak 10–20, Subota 10–14, Nedjelja neradna. U <em>Admin</em> dijelu možete trajno promijeniti sate (čuvaju se u ovom pregledaču).</p>
+      </div>
+
+      <p class="small">Napomena: postavite fajlove <strong>open.png</strong> i <strong>close.png</strong> u isti folder kao i ovaj index.html.</p>
+    </div>
+    <script src="assets/app.js"></script>
+  </body>
+</html>

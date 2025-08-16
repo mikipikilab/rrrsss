@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="sr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin • Radno vrijeme</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <meta name="robots" content="noindex,nofollow" />
+  </head>
+  <body onload="HoursApp.initAdmin()">
+    <div class="container">
+      <div class="header">
+        <h1>Admin • Radno vrijeme</h1>
+        <a class="button" href="index.html">Nazad</a>
+      </div>
+
+      <div class="card">
+        <div class="inline">
+          <label>Dan:
+            <select id="day-select"></select>
+          </label>
+
+          <label class="checkbox">
+            <input type="checkbox" id="closed-check" />
+            Neradni dan
+          </label>
+
+          <label>Otvaranje:
+            <input id="open-input" type="time" class="input" value="10:00" />
+          </label>
+
+          <label>Zatvaranje:
+            <input id="close-input" type="time" class="input" value="20:00" />
+          </label>
+
+          <button id="save-btn">Sačuvaj</button>
+          <button id="reset-btn" class="btn">Vrati podrazumijevano</button>
+        </div>
+
+        <p id="info" class="notice" style="margin-top:12px;"></p>
+
+        <h3 style="margin-top:12px;">Trenutno podešeno</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Dan</th><th>Radno vrijeme</th></tr>
+          </thead>
+          <tbody id="admin-table-body"></tbody>
+        </table>
+
+        <p class="footer-note">Promjene se čuvaju <em>lokalno</em> u pregledaču (localStorage). Ako želite da važi za sve posjetioce,
+        treba dodati backend / serverless skladište (mogu i to pripremiti kad zatreba).</p>
+      </div>
+    </div>
+    <script src="assets/app.js"></script>
+  </body>
+</html>

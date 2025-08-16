@@ -1,0 +1,19 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# Friendly /api path routed to the function
+[[redirects]]
+  from = "/api/schedule"
+  to = "/.netlify/functions/schedule"
+  status = 200
+  force = true
+
+# Basic CORS (can restrict to your domain later)
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, PUT, POST, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type"
+    Cache-Control = "no-store"

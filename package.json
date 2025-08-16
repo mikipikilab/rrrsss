@@ -1,0 +1,8 @@
+{
+  "name": "netlify-hours-site",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@netlify/blobs": "^6.3.1"
+  }
+}
